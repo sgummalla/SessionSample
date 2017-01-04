@@ -1,0 +1,16 @@
+﻿@model SingleSession.ViewModel.LoginViewModel
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+@using (Html.BeginForm("Index", "Login", FormMethod.Post))
+{
+    @Html.ValidationSummary()
+    @Html.LabelFor(model => model.UserName)
+    @Html.TextBoxFor(model => model.UserName)
+    @Html.LabelFor(model => model.Password)
+    @Html.PasswordFor(model => model.Password)
+    <input type="submit" value="Submit"/>
+}
